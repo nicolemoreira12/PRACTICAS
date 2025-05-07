@@ -1,0 +1,337 @@
+
+/* ESTILOS GENERALES */
+@import url('https://font.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+}
+ html{
+    scroll-behavior: smooth;
+ }
+
+body {
+    background-color:aliceblue;
+    color:black;
+    line-height: 1.6;
+}
+
+/* SECCIÓN INICIO */
+#inicio {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("img/portada\ inicio2.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+}
+
+.contenido {
+    width: 100%;
+    padding: 0 20px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.contenido-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10 20px;
+}
+
+.contenido-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color:blueviolet;
+}
+
+#nav ul {
+    display: flex;
+    list-style: none;
+}
+
+#links li {
+    margin-left: 30px;
+}
+
+#links a {
+    color:blueviolet;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#links a.selecionado,
+#links a:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#icono-nav {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color:blueviolet;
+}
+
+.redes a {
+    color:black;
+    margin-left: 15px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.redes a:hover {
+    transform: translateY(-3px);
+}
+
+.presentacion {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+    columns:white;
+    display:flex ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.Bienvenida {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.presentacion h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.presentacion h2 span {
+    color:white;
+}
+
+.presentacion .descripcion {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.presentacion a {
+    display: inline-block;
+    background-color: white;
+    color: #6e8efb;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.presentacion a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* SECCIÓN SOBRE MI CON MARCO */
+#CosasSobreMi {
+    padding: 100px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedor-foto {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    margin-right: 50px;
+    position: relative;
+    border: 15px solid black;
+    background-color: #010d1a3a;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover para el marco */
+.contenedor-foto:hover {
+    transform: scale(1.03);
+    box-shadow:
+        0 0 0 5px black,
+        0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.CosasSobreMi {
+    flex: 1;
+    min-width: 300px;
+    margin-top: 30px;
+}
+
+.titulo-seccion {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: blueviolet;
+    text-align: center;
+    position: relative;
+}
+
+
+/* SECCIÓN PORTAFOLIO */
+#Portafolio {
+    padding: 100px 20px;
+    background-color: #f1f3f5;
+}
+
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.proyectos {
+    position: relative;
+    width: calc(50% - 15px);
+    max-width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.proyectos:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.proyectos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.proyectos:hover img {
+    transform: scale(1.05);
+}
+
+.overplay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.proyectos:hover .overplay {
+    opacity: 1;
+}
+
+.Info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.proyectos:hover .Info {
+    bottom: 0;
+}
+
+.Info h4 {
+    color: #6e8efb;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    #nav {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        transition: all 0.3s ease;
+    }
+
+    #nav.active {
+        left: 0;
+    }
+
+    #links {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+    }
+
+    #links li {
+        margin: 15px 0;
+    }
+
+    #icono-nav {
+        display: block;
+    }
+
+    .presentacion h2 {
+        font-size: 36px;
+    }
+
+    .contenedor-foto {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .proyectos {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .presentacion h2 {
+        font-size: 28px;
+    }
+
+    .titulo-seccion {
+        font-size: 24px;
+    }
+
+    .CosasSobreMi h2 {
+        font-size: 28px;
+    }
+}
