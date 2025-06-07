@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Factura Simple</title>
+</head>
+<body>
+
+  <h2>Factura</h2>
+
+  <div>
+    <label>Producto:</label>
+    <input type="text" id="producto">
+    <label>Precio:</label>
+    <input type="number" id="precio">
+    <label>Cantidad:</label>
+    <input type="number" id="cantidad">
+    <button onclick="agregarProducto()">Agregar</button>
+  </div>
+
+  <h3>Detalle de Productos</h3>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio Unitario</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody id="lista-productos">
+      <!-- Aquí se agregan los productos -->
+    </tbody>
+  </table>
+
+  <h3>Total con IVA (12%): $<span id="total">0.00</span></h3>
+
+  <script>
+    const productos = [];
+
+    function agregarProducto() {
+      const nombre = document.getElementById('producto').value;
+      const precio = parseFloat(document.getElementById('precio').value);
+      const cantidad = parseInt(document.getElementById('cantidad').value);
+
+      if (!nombre || isNaN(precio) || isNaN(cantidad)) {
+        alert("Por favor, completa todos los campos correctamente.");
+        return;
+      }
+
+      productos.push({ nombre, precio, cantidad });
+      mostrarProductos();
+      calcularTotal();
+      limpiarCampos();
+    }
+
+    function mostrarProductos() {
+      const lista = document.getElementById('lista-productos');
+      lista.innerHTML = '';
+
+      productos.forEach(item => {
+        const fila = document.createElement('tr');
+        const total = (item.precio * item.cantidad).toFixed(2);
+
+        fila.innerHTML = `
+          <td>${item.nombre}</td>
+          <td>$${item.precio.toFixed(2)}</td>
+          <td>${item.cantidad}</td>
+          <td>$${total}</td>
+        `;
+
+        lista.appendChild(fila);
+      });
+    }
+
+    function calcularTotal() {
+      let subtotal = 0;
+
+      productos.forEach(item => {
+        subtotal += item.precio * item.cantidad;
+      });
+
+      const totalConIVA = subtotal + (subtotal * 0.12);
+      document.getElementById('total').textContent = totalConIVA.toFixed(2);
+    }
+
+    function limpiarCampos() {
+      document.getElementById('producto').value = '';
+      document.getElementById('precio').value = '';
+      document.getElementById('cantidad').value = '';
+    }
+  </script>
+
+</body>
+</html>
