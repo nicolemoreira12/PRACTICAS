@@ -1,0 +1,24 @@
+body {
+  font-family: sans-serif;
+  padding: 2rem;
+}
+
+form input {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+}
+
+.artista-card,
+.evento-card,
+.colaboracion-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
